@@ -1,9 +1,9 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
-
 import { ImageGallery } from "./components/ImageGallery";
 import { TripFilter } from "./components/TripFilter";
 import { useState } from "react";
+import { ActionButton } from "../components/ActionButton";
 
 export const TripOverview = () => {
   const [selectedDuration, setSelectedDuration] = useState<string>(durationOptions[0]);
@@ -16,18 +16,7 @@ export const TripOverview = () => {
           onDurationChange={setSelectedDuration}
           duration={selectedDuration}
         />
-        <Button
-          variant="outlined"
-          color="inherit"
-          startIcon={<AddIcon fontSize="large" />}
-          sx={{
-            borderRadius: 5,
-            borderColor: 'rgba(151, 151, 151, 0.3)',
-            textAlign: 'center',
-            textDecoration: 'none'
-          }}>
-          <Typography variant="button" fontWeight="600">Create</Typography>
-        </Button>
+        <ActionButton title="Create" icon={<AddIcon />} />
       </Stack>
       <ImageGallery />
     </Box>

@@ -6,7 +6,7 @@ function App() {
   return (
     <Box>
       <Header />
-      <Box p={4}>
+      <Box p={{ xs: 2, lg: 4 }}>
         <TripOverview />
       </Box>
     </Box>
