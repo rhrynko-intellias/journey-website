@@ -16,7 +16,12 @@ export const TripOverview = () => {
           onDurationChange={setSelectedDuration}
           duration={selectedDuration}
         />
-        <ActionButton title="Create" icon={<AddIcon />} />
+        <ActionButton
+          title="Create"
+          icon={<AddIcon />}
+          buttonProps={{ sx: { borderColor: 'rgba(151, 151, 151, 0.3)' } }}
+          fabProps={{ sx: { bgcolor: 'white' } }}
+        />
       </Stack>
       <ImageGallery />
     </Box>

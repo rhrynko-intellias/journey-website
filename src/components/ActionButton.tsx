@@ -27,8 +27,8 @@ export const ActionButton = ({
   const theme = useTheme();
   const mdUpBreakpoint = useMediaQuery(theme.breakpoints.up('md'));
 
-  const { size = 'small', color = 'primary', ...restFabProps } = fabProps;
-  const { sx, variant = 'outlined', color: btnColor = 'inherit', ...restButtonProps } = buttonProps;
+  const { sx: fabSx, size = 'small', color: fabColor = 'inherit', ...restFabProps } = fabProps;
+  const { sx, variant = 'outlined', color = 'inherit', ...restButtonProps } = buttonProps;
 
   return (
     <>
@@ -36,7 +36,8 @@ export const ActionButton = ({
         <Fab
           {...restFabProps}
           size={size}
-          color={color}
+          color={fabColor}
+          sx={fabSx}
         >
           {icon}
         </Fab>
@@ -48,7 +49,7 @@ export const ActionButton = ({
           sx={{ minWidth: 'fit-content', alignSelf: 'center', borderRadius: 5, ...sx }}
           startIcon={icon}
           variant={variant}
-          color={btnColor}
+          color={color}
         >
           <Typography variant="button" fontWeight="600">{title}</Typography>
         </Button>
