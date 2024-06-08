@@ -4,6 +4,7 @@ import { ImageGallery } from "./components/ImageGallery";
 import { TripFilter } from "./components/TripFilter";
 import { useState } from "react";
 import { ActionButton } from "../components/ActionButton";
+import { TripDetails } from "./components/TripDetails";
 
 export const TripOverview = () => {
   const [selectedDuration, setSelectedDuration] = useState<string>(durationOptions[0]);
@@ -24,6 +25,7 @@ export const TripOverview = () => {
         />
       </Stack>
       <ImageGallery />
+      <TripDetails duration={selectedDuration} />
     </Box>
   );
 }
