@@ -3,10 +3,11 @@ import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 import IosShareIcon from '@mui/icons-material/IosShare';
 
 import { ActionButton } from "../components/ActionButton";
+import { IcelandItinerary } from "./components/IcelandItinerary";
 
 export const IcelandHighLights = () => {
   return (
-    <Box mt={2}>
+    <Box mt={8}>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Typography
           variant="h5"
@@ -44,6 +45,7 @@ export const IcelandHighLights = () => {
           Iceland promises an unforgettable adventure for every traveler.
         </Typography>
       </Box>
+      <IcelandItinerary />
     </Box>
   )
 };
