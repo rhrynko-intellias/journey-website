@@ -1,6 +1,8 @@
 import { Typography } from "@mui/material";
 
 import { Wizard } from "../components/Wizard";
+import { HighlightCard, HighlightCards } from "./components/HighlightCards";
+import { waterfalls } from "./mockData";
 
 export const GoldenRegion = () => {
   return (
@@ -15,6 +17,23 @@ export const GoldenRegion = () => {
             and witness the site of Iceland's ancient parliament.
           </Typography>
         )
-      }]} />
+      },
+      {
+        title: 'Region Highlights',
+        content: <HighlightCards places={waterfalls}>
+          {(places) => (
+            <>
+              {places.map((place, index) => (
+                <HighlightCard place={place} key={index}>
+                  <Typography variant="body2">
+                    {place.description}
+                  </Typography>
+                </HighlightCard>
+              ))}
+            </>
+          )}
+        </HighlightCards>
+      }
+      ]} />
   )
 };
