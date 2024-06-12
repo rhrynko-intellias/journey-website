@@ -36,3 +36,42 @@ export const waterfalls = [
     curatorPick: true,
   },
 ];
+
+export const hotels = [
+  {
+    title: "Frost and Fire Hotel",
+    description: "$180+ · Boutique hotel",
+    image: "frost-and-fire-hotel.png",
+    curatorPick: true,
+  },
+  {
+    title: "The Greenhouse Hotel",
+    description: "$230+ · Luxury hotel",
+    image: "the-green-house-hotel.png",
+    curatorPick: true,
+  },
+  {
+    title: "INNI",
+    description: "$130+ · Apart hotel",
+    image: "inni-hotel.png",
+    curatorPick: false,
+  },
+  {
+    title: "Frost and Fire Hotel",
+    description: "$180+ · Boutique hotel",
+    image: "frost-and-fire-hotel.png",
+    curatorPick: true,
+  },
+  {
+    title: "The Greenhouse Hotel",
+    description: "$230+ · Luxury hotel",
+    image: "the-green-house-hotel.png",
+    curatorPick: true,
+  },
+  {
+    title: "INNI",
+    description: "$130+ · Apart hotel",
+    image: "inni-hotel.png",
+    curatorPick: false,
+  },
+];

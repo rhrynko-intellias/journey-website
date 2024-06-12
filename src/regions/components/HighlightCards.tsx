@@ -35,7 +35,7 @@ export const HighlightCard = ({ place, children }: HighlightCardProps) => {
       <Card sx={{ position: 'relative' }}>
         <CardMedia
           component="img"
-          height="140"
+          height="240"
           image={place.image}
           alt={place.title}
         />

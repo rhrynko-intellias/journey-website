@@ -1,8 +1,9 @@
-import { Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 import { Wizard } from "../components/Wizard";
 import { HighlightCard, HighlightCards } from "./components/HighlightCards";
-import { waterfalls } from "./mockData";
+import { hotels, waterfalls } from "./mockData";
 
 export const GoldenRegion = () => {
   return (
@@ -26,6 +27,29 @@ export const GoldenRegion = () => {
               {places.map((place, index) => (
                 <HighlightCard place={place} key={index}>
                   <Typography variant="body2">
+                    {place.description}
+                  </Typography>
+                </HighlightCard>
+              ))}
+            </>
+          )}
+        </HighlightCards>
+      },
+      {
+        title: 'Where to stay',
+        content: <HighlightCards places={hotels}>
+          {(places) => (
+            <>
+              {places.map((place, index) => (
+                <HighlightCard place={place} key={index}>
+                  <Stack direction="row" alignItems="center">
+                    <Box sx={{ bgcolor: 'yellow', width: 16, height: 16 }}>
+                      <ArrowUpwardIcon sx={{ fontSize: 16, color: 'black' }} />
+                    </Box>
+                    <Typography variant="body2" ml={1}>9.1/10</Typography>
+                  </Stack>
+                  <Typography variant="body2">
+
                     {place.description}
                   </Typography>
                 </HighlightCard>
