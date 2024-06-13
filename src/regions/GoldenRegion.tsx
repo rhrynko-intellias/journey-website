@@ -6,14 +6,17 @@ import { Wizard } from "../components/Wizard";
 import { HighlightCard, HighlightCards } from "./components/HighlightCards";
 import { hotels, waterfalls } from "./mockData";
 import { ActionButton } from "../components/ActionButton";
+import { useContext } from "react";
+import { ScrollContext } from "../context/ScrollContext";
 
 export const GoldenRegion = () => {
+  const { ref } = useContext(ScrollContext);
+
   return (
     <Wizard
       steps={[{
         title: (
-          <Typography variant="h6" fontWeight="600" data-testid="golden region">Golden Circle Region</Typography>
-
+          <Typography variant="h6" fontWeight="600" ref={ref}>Golden Circle Region</Typography>
         ),
         content: (
           <Typography variant="body2">

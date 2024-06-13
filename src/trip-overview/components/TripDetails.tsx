@@ -1,10 +1,14 @@
 import { Typography, styled, Grid, Button, Box } from '@mui/material';
+import { useContext } from 'react';
+import { ScrollContext } from '../../context/ScrollContext';
 
 type Props = {
   duration: string;
 };
 
 export const TripDetails = ({ duration }: Props) => {
+  const { onScroll } = useContext(ScrollContext)
+
   return (
     <Container>
       <Grid container spacing={2} justifyContent="space-between">
@@ -48,7 +52,7 @@ export const TripDetails = ({ duration }: Props) => {
           </Box>
         </Grid>
         <Grid item xs={12} sm={3} display="flex" alignContent="center" justifyContent="end">
-          <Button variant="text" sx={{ color: 'rgba(113, 78, 255, 1)', textDecoration: 'none' }}>
+          <Button variant="text" sx={{ color: 'rgba(113, 78, 255, 1)', textDecoration: 'none' }} onClick={() => onScroll()} >
             <Typography variant="button" fontWeight="600">View itinerary</Typography>
           </Button>
         </Grid>
