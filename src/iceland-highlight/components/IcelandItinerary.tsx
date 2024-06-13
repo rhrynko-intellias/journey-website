@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Stack, styled } from '@mui/material';
+import { Box, Typography, Stack, styled } from '@mui/material';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import PeopleIcon from '@mui/icons-material/People';
@@ -10,28 +10,36 @@ export const IcelandItinerary = () => {
         Iceland itinerary
       </Typography>
 
-      <OuterBox>
-        <Grid container spacing={2} alignItems="center" columnSpacing={10}>
-          <Grid item xs={12} md={4} display="flex" justifyContent="space-between" alignItems="center">
-            <StyledBox>
-              <Typography variant="body2">Reykjavík, KEF</Typography>
-            </StyledBox>
-            <FlightTakeoffIcon />
-            <StyledBox>
-              <Typography variant="body2">San Francisco, SFO</Typography>
-            </StyledBox>
-          </Grid>
-          <Grid item xs={12} md={4} display="flex" justifyContent="space-between" alignItems="center">
-            <StyledBox>
-              <CalendarTodayIcon />
-              <Typography variant="body2" ml={1}>Jul 03 - Jul 11</Typography>
-            </StyledBox>
-            <StyledBox>
-              <PeopleIcon />
-              <Typography variant="body2" ml={1}>2</Typography>
-            </StyledBox>
-          </Grid>
-        </Grid>
+      <OuterBox direction={{ xs: 'column', md: 'row' }} spacing={2}>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          spacing={2}
+        >
+          <StyledBox>
+            <Typography variant="body2">Reykjavík, KEF</Typography>
+          </StyledBox>
+          <FlightTakeoffIcon />
+          <StyledBox>
+            <Typography variant="body2">San Francisco, SFO</Typography>
+          </StyledBox>
+        </Stack>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          spacing={2}
+        >
+          <StyledBox>
+            <CalendarTodayIcon />
+            <Typography variant="body2" ml={1}>Jul 03 - Jul 11</Typography>
+          </StyledBox>
+          <StyledBox>
+            <PeopleIcon />
+            <Typography variant="body2" ml={1}>2</Typography>
+          </StyledBox>
+        </Stack>
       </OuterBox>
     </Stack>
   );
@@ -45,7 +53,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   alignItems: 'center',
 }));
 
-const OuterBox = styled(Box)(({ theme }) => ({
+const OuterBox = styled(Stack)(({ theme }) => ({
   padding: theme.spacing(4, 2),
   borderRadius: theme.shape.borderRadius * 2,
   backgroundColor: 'rgba(240, 244, 253, 1)',
