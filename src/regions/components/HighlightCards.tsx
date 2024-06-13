@@ -1,13 +1,7 @@
-import React from 'react';
 import { Box, Card, CardMedia, CardContent, Typography, Grid, Chip } from '@mui/material';
 
-type Place = {
-  title: string;
-  image: string;
-  description: React.ReactNode;
-  curatorPick?: boolean;
+import { Place } from '../types';
 
-}
 
 type HighlightCardsProps = {
   places: Place[];

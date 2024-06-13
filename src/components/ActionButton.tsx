@@ -12,6 +12,7 @@ import { ReactNode } from 'react';
 type Props = {
   title: ReactNode;
   icon: ReactNode;
+  onClick?: () => void;
 
   fabProps?: FabProps;
   buttonProps?: ButtonProps;
@@ -20,6 +21,7 @@ type Props = {
 export const ActionButton = ({
   title,
   icon,
+  onClick,
 
   fabProps = {},
   buttonProps = {},
@@ -38,6 +40,7 @@ export const ActionButton = ({
           size={size}
           color={fabColor}
           sx={fabSx}
+          onClick={onClick}
         >
           {icon}
         </Fab>
@@ -50,6 +53,7 @@ export const ActionButton = ({
           startIcon={icon}
           variant={variant}
           color={color}
+          onClick={onClick}
         >
           <Typography variant="button" fontWeight="600">{title}</Typography>
         </Button>
