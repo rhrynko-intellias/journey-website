@@ -1,41 +1,33 @@
 import { Box, Stack, Typography } from "@mui/material";
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 
 import { Wizard } from "../components/Wizard";
 import { HighlightCard, HighlightCards } from "./components/HighlightCards";
 import { hotels, waterfalls } from "./mockData";
-import { ActionButton } from "../components/ActionButton";
 
-export const GoldenRegion = () => {
+export const SouthAndHighLands = () => {
   return (
     <Wizard
       steps={[{
-        title: (
-          <Typography variant="h6" fontWeight="600" data-testid="golden region">Golden Circle Region</Typography>
-
+        title: 'South & HighLands',
+        subtitle: (
+          <Stack direction="row" spacing={2}>
+            <Typography variant="body2">Geysers</Typography>
+            <Typography variant="body2">Waterfalls</Typography>
+            <Typography variant="body2">Crater lakes</Typography>
+          </Stack>
         ),
         content: (
           <Typography variant="body2">
-            The Golden Circle in Iceland is a renowned tourist route that encompasses an array of stunning natural landmarks within a relatively short distance from Reykjavík.
-            This scenic loop includes three primary attractions:
-            Þingvellir National Park, where you can explore the rift valley created by the diverging North American and Eurasian tectonic plates
-            and witness the site of Iceland's ancient parliament.
+            The South & Highlands of Iceland offer a breathtaking landscape of diverse natural wonders,
+            from expansive glaciers and active volcanoes to serene waterfalls and black sand beaches.
+            This region is also a haven for adventurers, featuring numerous hiking trails, hidden hot springs, and vast lava fields waiting to be explored.
+            Visitors will be captivated by the blend of tranquility and raw, untamed beauty that defines this unique part of Iceland.
           </Typography>
         )
       },
       {
-        title: (
-          <Stack direction="row" spacing={2} justifyContent="space-between" alignItems="center">
-            <Typography variant="h6" fontWeight="600">Region Highlights</Typography>
-            <ActionButton
-              title="Show daily plan"
-              icon={<FormatListBulletedIcon />}
-              buttonProps={{ sx: { borderRadius: 2, borderColor: 'rgba(151, 151, 151, 0.3)', textTransform: 'initial' } }}
-              fabProps={{ sx: { bgcolor: 'white' } }}
-            />
-          </Stack>
-        ),
+        title: 'Region Highlights',
         content: (
           <HighlightCards places={waterfalls}>
             {(places) => (

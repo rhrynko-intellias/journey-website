@@ -4,6 +4,7 @@ import { Header } from './shell/Header';
 import { TripOverview } from './trip-overview/TripOverview';
 import { IcelandHighLights } from './iceland-highlight/IcelandHighLights';
 import { GoldenRegion } from './regions/GoldenRegion';
+import { SouthAndHighLands } from './regions/SouthAndHighLands';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <TripOverview />
         <IcelandHighLights />
         <GoldenRegion />
+        <SouthAndHighLands />
       </Box>
     </Box>
   );

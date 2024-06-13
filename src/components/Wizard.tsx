@@ -37,17 +37,16 @@ export function Wizard({ steps }: Props) {
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((step, index) => (
           <Step key={index}>
-            <StepLabel
-              optional={
-                index === 2 ? (
-                  <Typography variant="caption">Last step</Typography>
-                ) : null
-              }
-            >
-              <Typography variant="h6" fontWeight="600">{step.title}</Typography>
+            <StepLabel>
+              {typeof step.title === 'string' ? (
+                <Typography variant="h6" fontWeight="600">{step.title}</Typography>
+              ) : (
+                <>{step.title}</>
+              )}
+              {step.subtitle}
             </StepLabel>
             <StepContent>
-              <Typography variant='body2'>{step.content}</Typography>
+              {step.content}
               <Box sx={{ mb: 2 }}>
                 <Box>
                   <Button
