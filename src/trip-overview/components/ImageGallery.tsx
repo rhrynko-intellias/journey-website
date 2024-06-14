@@ -10,7 +10,7 @@ export const ImageGallery = () => {
         cols={4}
         rowHeight={200}
       >
-        {itemData.map((item) => (
+        {images.map((item) => (
           <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
             <img
               {...srcset(item.img, 121, item.rows, item.cols)}
@@ -50,27 +50,27 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
   };
 }
 
-const itemData = [
+const images = [
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+    img: 'joshua-earle.png',
     title: 'Breakfast',
     rows: 2,
     cols: 2,
   },
   {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+    img: 'gullfoss-waterfall.png',
     title: 'Burger',
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+    img: 'geysir-thermal-field.png',
     title: 'Camera',
   },
   {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+    img: 'lakes.png',
     title: 'Coffee',
   },
   {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
+    img: 'cave.png',
     title: 'Hats',
   },
 ];
